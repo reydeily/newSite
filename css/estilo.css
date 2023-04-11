@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+* {
+  color: rgb(0, 0, 0);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body header {
+  padding: 20px 0;
+  height: 9rem;
+  background-color: rgb(209, 209, 209);
+  border-bottom: 0.3rem solid #00FFB2;
+  display: flex;
+  
+}
+
+header img {
+  height: 100%;
+  margin-left: 1rem;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+header nav a {
+  margin-right: 30px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+footer {
+  background-color: rgb(209, 209, 209);
+  border-bottom: 0.5rem solid #00FFB2 ;
+  height: 4rem;
+  width: 100%;
+  bottom: 0;
+}
+
+footer img {
+  height: 100%;
+  padding: 0.3rem;
+}
+
+a:hover {
+  color: rgb(0, 218, 207);
+}
+
+#menu {
+  width: 50%;
+  float: right;
+}
+
+#menu ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#menu ul li {
+  display: inline-block;
+  font-size: 1.7rem;
+
+}
+
+#menu ul li a #menu ul li:hover a {
+  text-decoration: underline;
+}
+
+input#checkmenu {
+  display: none;
+
+}
+
+
+#labelmenu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  height: 100%;
+  align-self: flex-end;
+}
+
+.menuburguer {
+  margin-right: 3%;
+  height: 100%;
+}
+
+@media(max-width:1542px) {
+  #menu ul {
+    padding-right: 2%;
+  }
+
+  #menu ul li {
+    font-size: 1.3em;
+  }
+}
+
+
+@media(max-width:1261px) {
+
+  #menu {
+    display: none;
+    height: calc(100vh - 7rem);
+    width: 100%;
+    justify-content: right;
+
+  }
+
+  #menu ul {
+    flex-wrap: wrap;
+    background-color: var(--primary);
+    height: 100%;
+    width: 50%;
+    align-content: flex-start;
+    padding-right: 2%;
+
+  }
+
+  input#checkmenu~#menu ul {
+    position: absolute;
+    right: -100%;
+    animation: appear;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    transition: right 3s;
+
+  }
+
+  @keyframes appear {
+    100% {
+      right: 0;
+    }
+  }
+
+
+  #menu ul li {
+    width: 100%;
+    text-align: right;
+    display: block;
+    height: calc(7rem/3);
+    padding: 2% 0;
+  }
+
+  .menuburguer {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    flex-wrap: wrap;
+  }
+
+  input#checkmenu:checked~#menu {
+    display: flex;
+    backdrop-filter: blur(5px);
+  }
+  input#checkmenu:checked~label .menuburguer {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    rotate: 45deg;
+  }
+
+  input#checkmenu:checked~label #hamburguer1::before {
+    position: absolute;
+    rotate: -90deg;
+  }
+
+
+  .hamburguer,
+  .hamburguer::before {
+    display: block;
+    height: 5%;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    transition: rotate 1s;
+
+  }
+
+  .hamburguer::before {
+    display: block;
+    content: '';
+  }
+
+
+}
+
+  header h1{
+    font-family: 'Poppins';
+  }
+
+  .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: " inversor microinversor placa";
+    grid-gap: 0.5em
+  }
+  #inversor{
+    grid-area: inversor;
+    border-color: 1px #00FFB2;
+    border-radius: 67px;
+  }
+  #microinversor{
+    grid-area: microinversor;
+    border-radius: 67px;
+  }
+  #placa{
+    grid-area: placa;
+    border-radius: 67px;
+  }
+  
+  .continversor{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+  }
